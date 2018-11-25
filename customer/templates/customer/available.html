@@ -1,0 +1,14 @@
+{%extends 'index.html'%}
+{%  block content %}
+<h1 style="color: darkslateblue"> Available Movies </h1>
+<form method="post">
+    {% csrf_token %}
+    {% for movies in k %}
+    <ul style="font-size: 20px">
+    <li class="list-group-item active" style="background: cadetblue;color: black";>
+        {{ movies}}
+    </li>
+    </ul>
+    {% endfor %}
+</form>
+{% endblock %}

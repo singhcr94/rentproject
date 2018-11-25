@@ -1,0 +1,32 @@
+{%extends 'index.html'%}
+{%  block content %}
+<h1> Rented Movies and Return Option </h1>
+<form method="POST">
+    {% csrf_token %}
+    <table class="table table-hover" style="float: left">
+<tr>
+<th>
+    Movies
+</th>
+<th>
+    Customers
+</th>
+<th>
+    RETURN
+</th>
+</tr>
+        {%for z in m%}
+
+    <tr>
+        <td>
+            {{ z }}
+        </td>
+    <td> {{ z.rentby }}</td>
+    <td> <button class="btn btn-success" value="{{ z }}" name="movie" type="submit">return</button></td>
+        </tr>
+{% endfor %}
+    </table>
+
+
+</form>
+{% endblock %}

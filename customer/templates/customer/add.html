@@ -1,0 +1,12 @@
+{%extends 'index.html'%}
+{%  block content %}
+    {% load crispy_forms_tags %}
+<h1> Add a customer</h1>
+<form method="post">
+<div class="form-group">
+    {% csrf_token %}
+    {{form|crispy   }}
+</div>
+    <input type="submit" class="btn btn-success" name="submit" value="Create Category" />
+</form>
+{% endblock %}

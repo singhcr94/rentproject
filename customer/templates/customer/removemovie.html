@@ -1,0 +1,20 @@
+{%extends 'index.html'%}
+{%  block content %}
+<h1> Remove any movie </h1>
+<form method="POST">
+    {% csrf_token %}
+<div class="removet">
+    <table class="table table-bordered" style="float: left">
+{%for z in movies%}
+<tr>
+        <td>
+            {{ z }}
+        </td>
+    <td><button class="btn btn-success" value="{{ z }}" name="movie" type="submit">return</button></td>
+        </tr>
+{% endfor %}
+    </table>
+</div>
+
+</form>
+{% endblock %}

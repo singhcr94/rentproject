@@ -1,0 +1,21 @@
+{%extends 'index.html'%}
+{%  block content %}
+<h1> Remove any customer </h1>
+<form method="POST">
+    {% csrf_token %}
+<div class="removet">
+    <table  class="table table-hover" style="float: left">
+{%for z in persons%}
+<tr>
+        <td>
+            {{ z }}
+        </td>
+    <td><button class="btn btn-success" value="{{ z }}" name="movie" type="submit">REMOVE</button></td>
+<td> <button class="btn btn-success" value="{{ z }}" name="edit" type="submit" formaction="/edits"> EDIT </button> </td>
+</tr>
+{% endfor %}
+    </table>
+</div>
+
+</form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{%extends 'index.html'%}
+{%  block content %}
+    {% load crispy_forms_tags %}
+<h1> Edit a customer</h1>
+<form method="post">
+<div class="form-group">
+    {% csrf_token %}
+    {{form|crispy   }}
+</div>
+
+<td> <button class="btn btn-success" type="submit" formaction="/edits"> UPDATE </button> </td>
+</form>
+{% endblock %}
